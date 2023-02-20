@@ -6,13 +6,10 @@ from spotipy.oauth2 import SpotifyOAuth
 
 
 # Set Spotify API credentials
-client_id = ''
-client_secret = ''
-redirect_uri = ''
+client_id = 'client_id'
+client_secret = 'client_secret'
+redirect_uri = 'http://localhost:8080/'
 
-
-os.system(f'export SPOTIPY_CLIENT_ID="{client_id}"')
-os.system(f'export SPOTIPY_CLIENT_SECRET="{client_secret}"')
 
 # Create Spotify API object
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,
@@ -40,9 +37,9 @@ while True:
 
 # Ask user for choice
 print("Choose an option:")
-print("1. Download playlists using savify")
-print("2. Scan and compare playlists with existing ones")
-print("3. Scan and add JSON of your playlists\n")
+print("1. Download playlists using spotdl")
+print("2. Scan and compare playlists")
+print("3. Scan and create/update JSON for your playlists\n")
 
 choice = input("\n:")
 if choice == "1":
@@ -60,8 +57,11 @@ if choice == "1":
 
             # Get playlist's Spotify URL
             playlist_url = playlist["external_urls"]["spotify"]
-            # Use savify to download playlist as mp3
-            os.system(f'savify -t playlist "{playlist_url}" -q best -f mp3 -o "{playlist_folder}"')
+            # Use savify to download playlist -- OBSOLETE
+            #os.system(f'savify -t playlist "{playlist_url}" -q best -f mp3 -o "{playlist_folder}"')
+            #
+            # Use spotdl to download playlist.
+            os.system(f'spotdl download "{playlist_url}" --client-id "{client_id}" --client-secret "{client_secret}" --output "{playlist_folder}"')
             print(f"{playlist_name} downloaded.")
 elif choice == "2":
     # Iterate through playlists
@@ -82,8 +82,11 @@ elif choice == "2":
 
                 # Get playlist's Spotify URL
                 playlist_url = playlist["external_urls"]["spotify"]
-                # Use savify to download playlist as mp3
-                os.system(f'savify -t playlist "{playlist_url}" -q best -f mp3 -o "{playlist_folder}"')
+                # Use savify to download playlist -- OBSOLETE
+                # os.system(f'savify -t playlist "{playlist_url}" -q best -f mp3 -o "{playlist_folder}"')
+                #
+                # Use spotdl to download playlist
+                os.system(f'spotdl download "{playlist_url}" --client-id "{client_id}" --client-secret "{client_secret}" --output "{playlist_folder}"')
                 print(f"{playlist_name} downloaded.")
             elif download == "n":
                 print(f"{playlist_name} not downloaded.")
