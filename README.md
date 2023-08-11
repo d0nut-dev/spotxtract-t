@@ -1,5 +1,4 @@
-# spotxtract-t
-
+# spotxtract-py _(dicsontinued)_
 ### Description:
 Creates folders and downloads all your spotify playlists trough [spotify-downloader](https://github.com/spotDL/spotify-downloader).
 
