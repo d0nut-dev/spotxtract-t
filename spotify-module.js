@@ -1,7 +1,7 @@
 const https = require("https");
 
-const CLIENT_ID = "Your CLIENT_ID";
-const CLIENT_SECRET = "Your CLIENT_SECRET";
+const CLIENT_ID = "YOUR CLIENT_ID"; //Get from SpotifyAPI Dashboard.
+const CLIENT_SECRET = "YOUR CLIENT_SECRET"; //Get from SpotifyAPI Dashboard.
 
 async function getAccessToken() {
   return new Promise((resolve, reject) => {
