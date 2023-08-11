@@ -5,7 +5,7 @@ _**tl;dr: Spotify migration helper or 'zspotify' and 'spotify_folders' wrapper.*
 
 Creates folders and downloads all your spotify playlists trough [zspotify](https://github.com/jsavargas/zspotify) according to 'hierarchy.json' that was extracted with [spotify_folders](https://github.com/mikez/spotify-folders). Also downloads their covers with curl.
 
-If you don't have any spotify folders and want to download one, or few of your playlists - consider to use [zspotify](https://github.com/jsavargas/zspotify) solely. Nevetheless, if you want to download all your playlists and their cover images - this script is for you.
+If you don't have any spotify folders and want to download one, or few of your playlists - consider to use [zspotify](https://github.com/jsavargas/zspotify) solely. Nevertheless, if you want to download all your playlists and their cover images - this script is for you.
 
 Constists of two separate parts:
 1. index.js - main body;
